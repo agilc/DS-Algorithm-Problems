@@ -38,4 +38,31 @@ class LinkedList():
 		while temp_node:
 			print(f'{temp_node.data} -->')
 			temp_node = temp_node.next
+
+
+	#deleting a node from key
+	def delete_node_from_key(self, key):
+		temp = self.head
+		prev = None
 		
+		if temp is not None:
+			if self.head.data == key:
+				self.head = self.head.next
+				temp = None
+				print(f'Key {key} deleted..!')
+				return
+
+		while temp:
+			print("data", temp.data)
+			if temp.data == key:
+				break
+			
+			prev = temp
+			temp = temp.next
+		
+		if temp is None:
+			print("Key not exists in the the linkedlist")	
+		else:
+			prev.next = temp.next
+			temp = None	
+			print(f'Key {key} deleted..!')
