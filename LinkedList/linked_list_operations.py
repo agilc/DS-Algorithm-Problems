@@ -66,3 +66,34 @@ class LinkedList():
 			prev.next = temp.next
 			temp = None	
 			print(f'Key {key} deleted..!')
+
+
+	#deleting a node by index
+	def delete_node_from_index(self, index):
+		if self.head is None:
+			print("Can't delete, Linkedlist is empty")
+			return
+		
+		temp = self.head
+		prev = None
+		count = 0
+		
+		if index == 0:
+			self.head = temp.next
+			temp = None
+			print("Deleted node at index 0")
+			return
+		
+		print('temp', temp)
+		while count < index and temp is not None:
+			prev = temp
+			temp = temp.next
+			count += 1
+					
+		print("count", count)
+		if count < index:
+			print(f'No node at position {index}')
+		else:
+			prev.next = temp.next
+			temp = None
+			print(f'Node deleted at index {index}')
