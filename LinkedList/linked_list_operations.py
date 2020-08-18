@@ -165,4 +165,18 @@ class LinkedList():
 
 	def print_search_list_recursive(self,key):
 		print(self.search_list_recursive(self.head, key))
-			
+	
+
+	#Get nth node of a linkedlist
+	def get_nth_node_iterative(self, N):	
+		current = self.head
+		count = 0
+		while current:
+			if count == N:
+				print("Nth node data is :", current.data)
+				return
+			current = current.next
+			count += 1
+
+		print("Nth node not available")
+		
