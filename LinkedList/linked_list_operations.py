@@ -116,3 +116,25 @@ class LinkedList():
 		self.head = None
 
 		print("All the elements from the linkedlist are deleted")
+
+
+	#Length of a linkedlist by iterative way
+	def list_length_iterative(self):
+		temp = self.head
+		count = 0
+		while(temp):
+			temp = temp.next
+			count += 1
+
+		print("Length of the linkedlist is:", count)
+
+
+	##Length of a linkedlist by recursive method
+	def list_length_reccursive(self, start):
+		if start is None:
+			return 0
+		return 1+ self.list_length_reccursive(start.next)
+
+
+	def print_list_length(self):
+		print("Length of the list is", self.list_length_reccursive(self.head))
