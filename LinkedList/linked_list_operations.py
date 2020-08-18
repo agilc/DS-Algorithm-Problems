@@ -138,3 +138,31 @@ class LinkedList():
 
 	def print_list_length(self):
 		print("Length of the list is", self.list_length_reccursive(self.head))
+
+
+
+	#Search in a linkedlist iteratively
+	def search_list_iterative(self, key):
+		temp = self.head
+		while temp:
+			if temp.data == key:
+				return True
+			temp = temp.next
+
+		return False
+
+
+	#Search in a linkedlist recursively
+	def search_list_recursive(self, node, key):
+		if node is None:
+			return False
+
+		if node.data == key:
+			return True
+
+		return self.search_list_recursive(node.next, key)
+
+
+	def print_search_list_recursive(self,key):
+		print(self.search_list_recursive(self.head, key))
+			
