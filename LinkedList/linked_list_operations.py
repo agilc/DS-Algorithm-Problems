@@ -97,3 +97,22 @@ class LinkedList():
 			prev.next = temp.next
 			temp = None
 			print(f'Node deleted at index {index}')
+
+
+	#Delete a linkedlist
+	def delete_ll(self):
+		if self.head is None:
+			print("Linkedlist is already empty")
+			return
+
+		current = self.head
+		while current:
+			print(f'Deleting value {current.data}')
+			prev = current
+			current = current.next
+			del prev.data
+			del prev.next
+	
+		self.head = None
+
+		print("All the elements from the linkedlist are deleted")
