@@ -37,3 +37,23 @@ class LinkedList():
       temp = temp.next
 
     print(f'The middle element of the linked list is {temp.data}')
+
+  #Find middle element of a linkedlist by using 2 pointers
+  def find_middle_element_two_pointer(self):
+    if self.head is None:
+      print("Linked list is empty")
+      return
+
+    if self.head.next is None:
+      print("Middle element is :", self.head.data)
+      return
+
+    fast_ptr = self.head
+    slow_ptr = self.head
+
+    while fast_ptr and fast_ptr.next:
+      fast_ptr = fast_ptr.next.next
+      slow_ptr = slow_ptr.next
+
+    print("Middle element is :", slow_ptr.data)
+
