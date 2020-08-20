@@ -54,3 +54,23 @@ class LinkedList():
       else:
         current = current.next
 
+  #Remove duplicate element recursive
+  def remove_duplicate_from_sorted_recursive(self, head):
+    if head.next is None:
+      return
+
+    if head.data == head.next.data:
+      temp = head.next
+      head.next = head.next.next
+      print("Removing element ", temp.data)
+      temp = None
+      self.remove_duplicate_from_sorted_recursive(head)
+    else:
+      self.remove_duplicate_from_sorted_recursive(head.next)
+
+  def call_remove_duplicate_from_sorted_recursive(self):
+    if self.head is None:
+      print("Linked lsit is empty")
+      return
+
+    self.remove_duplicate_from_sorted_recursive(self.head)
